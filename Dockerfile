@@ -1,5 +1,5 @@
-# Use PHP 8.1.23 with Apache as the base image
-FROM php:8.1.23-apache
+# Use PHP 8.2 with Apache as the base image
+FROM php:8.2-apache
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
