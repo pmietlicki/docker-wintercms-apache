@@ -121,9 +121,12 @@ if [ "${INIT_PLUGINS,,}" == "true" ] || [ "${INIT_PLUGINS,,}" == "force" ]; then
 fi
 
 # Run winter up on container start
-if [ "${INIT_WINTER,,}" == "true" ]; then
+# Check if .env file exists
+if [ ! -f "/var/www/html/.env" ]; then
   echo 'Initializing Winter CMS...'
-  php artisan winter:up
+  /usr/local/bin/install-winter-cms.sh
+else
+  echo '.env file exists. Skipping Winter CMS initialization.'
 fi
 
 # Runs all Winter CMS unit tests. Pass test filename to run a specific test.
