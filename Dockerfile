@@ -38,7 +38,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --1 --install-dir=/usr/l
 RUN a2enmod rewrite
 
 # Set environment variables
-ENV WINTERCMS_TAG v1.2.5
+ENV WINTERCMS_TAG v1.2.6
 ENV DB_CONNECTION sqlite
 ENV DB_DATABASE storage/database.sqlite
 
